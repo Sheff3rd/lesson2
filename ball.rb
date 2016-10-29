@@ -12,14 +12,14 @@ class Ball
 
   def answer
     case @rindex
-    when 0..4 then puts Ball::ANSWERS[@rindex].to_s.colorize(31)
-    when 5..9 then puts Ball::ANSWERS[@rindex].to_s.colorize(32)
-    when 10..14 then puts Ball::ANSWERS[@rindex].to_s.colorize(33)
-    else answe
+    when 0..4 then result(31)
+    when 5..9 then result(32)
+    when 10..14 then result(33)
+    else result(34)
     end
   end
 
-  def answe
-    puts Ball::ANSWERS[@rindex].to_s.colorize(34)
+  def result(colour)
+    puts Ball::ANSWERS[@rindex].to_s.colorize(colour)
   end
 end

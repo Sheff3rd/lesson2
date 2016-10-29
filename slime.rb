@@ -31,20 +31,11 @@ class Slime
   end
 
   def status
-    puts 'Health ' + health.to_s
-    puts 'Hunger ' + hunger.to_s
-    puts 'Sleep ' + bedtime.to_s
-    puts 'Time ' + @time.to_s
+    puts 'Health ' + @health.to_s
+    puts 'Hunger ' + @hunger.to_s
+    puts 'Sleep ' + @bedtime.to_s
     puts 'Age ' + @age.to_s + ' days'
-    if @attraction < 0
-      puts 'Slime hates your guts'
-    elsif @attraction < 11
-      puts 'Slime happy with his ways'
-    elsif @attraction < 21
-      puts 'Slime wants you to notice him'
-    else
-      puts 'You two are like an old couple'
-    end
+    stress
   end
 
   def rest
@@ -79,6 +70,18 @@ class Slime
     @hunger -= 3
     @age += 1
     death if hunger <= 0
+  end
+
+  def stress
+    if @attraction < 0
+      puts 'Slime hates your guts'
+    elsif @attraction < 11
+      puts 'Slime happy with his ways'
+    elsif @attraction < 21
+      puts 'Slime wants you to notice him'
+    else
+      puts 'You two are like an old couple'
+    end
   end
 
   def overfed

@@ -113,12 +113,13 @@ slimey = Slime.new
 
 loop do
   i = gets.chomp
-  case i when 'feed' then slimey.feed
-    when 'status' then slimey.status
-    when 'salt' then slimey.salt
-    when 'rest' then slimey.rest
-    when 'walk' then slimey.walk
-    when 'dance' then slimey.dance
-    when 'help' then slimey.help
+  case i
+  when 'feed' then slimey.feed
+  when 'status' then slimey.status
+  when 'salt' then slimey.salt
+  when 'rest' then slimey.rest
+  when 'walk' then slimey.walk
+  when 'dance' then slimey.dance
+  when 'help' then slimey.help
   end
 end

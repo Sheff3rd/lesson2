@@ -11,7 +11,7 @@ class Slime
   end
 
   def help
-    puts "List of commands:\nSalt, feed, rest, dance, status, walk"
+    puts "List of commands:\nsalt, feed, rest, dance, status, walk"
   end
 
   def salt
@@ -74,6 +74,7 @@ class Slime
     @hunger -= 3
     @age += 1
     death if hunger <= 0
+    rest if @bedtime <= 0
   end
 
   def stress
@@ -121,5 +122,6 @@ loop do
   when 'walk' then slimey.walk
   when 'dance' then slimey.dance
   when 'help' then slimey.help
+    else puts "Wrong input. Try typing with lower case or enter 'help' for some help"
   end
 end

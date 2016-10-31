@@ -10,6 +10,10 @@ class Slime
     @attraction = 0
   end
 
+  def help
+    puts "List of commands:\nSalt, feed, rest, dance, status, walk"
+  end
+
   def salt
     puts "You salt the slime. He clearly doesn't like it"
     hurt
@@ -106,21 +110,15 @@ class Slime
 end
 
 slimey = Slime.new
-slimey.salt
-slimey.status
-slimey.dance
-slimey.walk
-slimey.status
-slimey.rest
-slimey.status
-3.times { slimey.feed }
-slimey.status
-slimey.rest
-slimey.status
-3.times { slimey.feed }
-slimey.status
-slimey.dance
-slimey.walk
-slimey.status
-3.times { slimey.feed }
-slimey.status
+
+loop do
+  i = gets.chomp
+  case i when 'feed' then slimey.feed
+    when 'status' then slimey.status
+    when 'salt' then slimey.salt
+    when 'rest' then slimey.rest
+    when 'walk' then slimey.walk
+    when 'dance' then slimey.dance
+    when 'help' then slimey.help
+  end
+end

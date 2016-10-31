@@ -67,7 +67,7 @@ class Slime
   end
 
   def day_pass
-    puts 'A day passes by. You said you greatings'
+    puts 'A day passes by. You said you greetings'
     health
     @time = 10
     @bedtime -= 5
@@ -122,6 +122,6 @@ loop do
   when 'walk' then slimey.walk
   when 'dance' then slimey.dance
   when 'help' then slimey.help
-    else puts "Wrong input. Try typing with lower case or enter 'help' for some help"
+  else puts "Wrong input. Try typing with lower case or enter 'help'"
   end
 end
